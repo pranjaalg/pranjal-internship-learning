@@ -26,7 +26,7 @@ router.post('/', (req: Request, res: Response): void => {
   
   // Validation
   if (!firstname || !lastname) {
-    res.status(400).json({ message: 'Firstname and lastname are required' });
+    res.status(400).json({ message: 'firstname and lastname are required' });
     return;
   }
   
@@ -41,7 +41,7 @@ router.put('/:id', (req: Request, res: Response): void => {
   
   // Validation
   if (!firstname && !lastname) {
-    res.status(400).json({ message: 'Firstname or lastname is required' });
+    res.status(400).json({ message: 'firstname or lastname is required' });
     return;
   }
   
