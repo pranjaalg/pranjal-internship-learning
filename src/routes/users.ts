@@ -3,12 +3,12 @@ import User from '../models/User';
 
 const router: Router = express.Router();
 
-// Get all users
+// Get All users
 router.get('/', (req: Request, res: Response): void => {
   res.json(User.findAll());
 });
 
-// Get user by ID
+// Get user by ID 
 router.get('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
   const user = User.findById(id);
@@ -20,11 +20,11 @@ router.get('/:id', (req: Request, res: Response): void => {
   }
 });
 
-// Create a new user
+//     Create a new user
 router.post('/', (req: Request, res: Response): void => {
   const { firstname, lastname } = req.body;
   
-  // Validation
+  // Validation to check name 
   if (!firstname || !lastname) {
     res.status(400).json({ message: 'Firstname and lastname are required' });
     return;
@@ -34,7 +34,7 @@ router.post('/', (req: Request, res: Response): void => {
   res.status(201).json(newUser);
 });
 
-// Update user
+// Update user using id 
 router.put('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
   const { firstname, lastname } = req.body;
@@ -53,8 +53,8 @@ router.put('/:id', (req: Request, res: Response): void => {
     res.status(404).json({ message: 'User not found' });
   }
 });
-
-// Delete user
+ 
+// Delete user using id 
 router.delete('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
   const deleted = User.delete(id);
