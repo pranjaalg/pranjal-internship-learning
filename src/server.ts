@@ -8,7 +8,7 @@ const PORT: number =  3000;
 // Middleware
 app.use(bodyParser.json());
 
-// Routes
+
 app.use('/api/users', usersRoutes);
 
 
@@ -16,7 +16,7 @@ app.get('/', (req: Request, res: Response): void => {
   res.send('API endpoints');
 });
 
-// Start server
+// Starting  server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
