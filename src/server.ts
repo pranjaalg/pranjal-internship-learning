@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 // Routes
 app.use('/api/users', usersRoutes);
 
-// Home route
+
 app.get('/', (req: Request, res: Response): void => {
   res.send('API endpoints');
 });
