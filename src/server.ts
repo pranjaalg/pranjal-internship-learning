@@ -8,7 +8,7 @@ const PORT: number =  3000;
 // Middleware
 app.use(bodyParser.json());
 
-// Routes
+
 app.use('/api/users', usersRoutes);
 
 

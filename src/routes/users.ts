@@ -34,12 +34,12 @@ router.post('/', (req: Request, res: Response): void => {
   res.status(201).json(newUser);
 });
 
-// Update user
+// Update user using id 
 router.put('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
   const { firstname, lastname } = req.body;
   
-  // Validation
+  // Validation for names 
   if (!firstname && !lastname) {
     res.status(400).json({ message: 'Firstname or lastname is required' });
     return;
@@ -54,7 +54,7 @@ router.put('/:id', (req: Request, res: Response): void => {
   }
 });
 
-// Delete user
+// Delete user using id 
 router.delete('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
   const deleted = User.delete(id);
