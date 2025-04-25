@@ -39,5 +39,6 @@ export function updateUser(firstName: string, newLastname: string): void {
   users[index].lastName = newLastname;
   saveUsers(users);
   console.log(`${firstName} updated to ${newLastname}`); 
+  console.log("new features added")
 }
 }
