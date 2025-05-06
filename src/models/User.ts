@@ -8,7 +8,6 @@ interface UserData {
   }
   
 
-//   To save data in RAM 
   class User {
     private static users: UserModel[] = [];
     private static nextId: number = 1;

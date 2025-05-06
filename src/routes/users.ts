@@ -39,7 +39,7 @@ router.put('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
   const { firstname, lastname } = req.body;
   
-  // Validation
+  // Validation for names 
   if (!firstname && !lastname) {
     res.status(400).json({ message: 'Firstname or lastname is required' });
     return;
@@ -53,7 +53,7 @@ router.put('/:id', (req: Request, res: Response): void => {
     res.status(404).json({ message: 'User not found' });
   }
 });
- 
+
 // Delete user using id 
 router.delete('/:id', (req: Request, res: Response): void => {
   const id: string = req.params.id;
