@@ -16,7 +16,7 @@ app.get('/', (req: Request, res: Response): void => {
   res.send('API endpoints');
 });
 
-// Start server
+// Starting  server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
