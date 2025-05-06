@@ -5,7 +5,7 @@ const usersRoutes = require('./routes/users');
 const app: Application = express();
 const PORT: number =  3000;
 
-// Middleware
+
 app.use(bodyParser.json());
 
 
