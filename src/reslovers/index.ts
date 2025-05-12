@@ -25,7 +25,9 @@ export const resolvers = {
 const PORT = process.env.PORT || 4001;
 
 // Start Server
-const server = new ApolloServer({ typeDefs, resolvers });
+const server = new ApolloServer({ typeDefs, resolvers
+  context: () => ({ prisma: prismaMock }),
+ });
 
 server.listen({ port: PORT }).then(({ url }) => {
   console.log(`Server ready at ${url}`);
